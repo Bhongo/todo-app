@@ -16,7 +16,7 @@ module.exports = function(app){
         res.json(data);
     });
 
-    app.delete('/todo', function(req, res) {  // http request
+    app.delete('/todo/:item', function(req, res) {  // http request
         data = data.filter((todo) => todo.item.replace(/ /g, '-') !== req.params.item);
         res.json(data);
     });
